@@ -15,7 +15,12 @@ r = requests.get(url, headers=headers)
 #a=r.json()
 #print(json.dumps(a))
 data = json.loads(r.content.decode())
-print(data)
+print(type(data))
+print(data[0]['name'])
+
+for a, b in enumerate(data):
+  for key, val in b.items():
+    print(val)
 
 #http://docs.python-guide.org/en/latest/scenarios/json/
 
