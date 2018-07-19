@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
+# coding: utf-8
 
 import requests
 import json
 
-url = "http://localhost:4440/api/24/projects?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
+token = "?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
+urlbase = "http://localhost:4440/api/24"
+url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 
@@ -15,18 +18,18 @@ for element in r.json():
     print(element["name"])
 
 #GET  project's jobs
-urljob = "http://localhost:4440/api/24/project/mon-premier-projet/jobs?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
+urljob = urlbase + "/project/mon-premier-projet/jobs" + token
 headers = {'Accept': 'application/json'}
 r1 = requests.get(urljob, headers=headers)
 print(r1.json())
 
 #GET job's info
 jobid = "af266d96-8ba1-4286-b356-7e037fc5315c"
-urljob1 = "http://localhost:4440/api/24/job/" + jobid + "?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
+urljob1 = urlbase + "/job/" + jobid + token
 print(urljob1)
-headers = {'Accept': 'application/json'}
-r2 = requests.get(urljob1, headers=headers)
-print(r2.json())
+# headers = {'Accept': 'application/json'}
+# r2 = requests.get(urljob1, headers=headers)
+# print(r2.json())
 
 
 #status de l'exécution d'un projet :
