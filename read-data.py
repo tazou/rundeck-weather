@@ -23,10 +23,17 @@ headers = {'Accept': 'application/json'}
 r1 = requests.get(urljob, headers=headers)
 print(r1.json())
 
+#GET job's executions
+urlexec = urlbase + "/project/mon-premier-projet/executions" + token
+headers = {'Accept': 'application/json'}
+r2 = requests.get(urlexec, headers=headers)
+print(r2.json())
+
+
 #GET job's info
-jobid = "af266d96-8ba1-4286-b356-7e037fc5315c"
-urljob1 = urlbase + "/job/" + jobid + token
-print(urljob1)
+# jobid = "af266d96-8ba1-4286-b356-7e037fc5315c"
+# urljob1 = urlbase + "/job/" + jobid + token
+# print(urljob1)
 # headers = {'Accept': 'application/json'}
 # r2 = requests.get(urljob1, headers=headers)
 # print(r2.json())
