@@ -10,24 +10,32 @@ url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 
-print(type(r)) #<class 'requests.models.Response'>
-print(r.json)
+#print(type(r)) #<class 'requests.models.Response'>
+# print(r.json)
 
 # Boucle sur le nom de chaque projets.
-for element in r.json():
-    print(element["name"])
+# for element in r.json():
+#     print(element["name"])
 
 #GET  project's jobs
 urljob = urlbase + "/project/mon-premier-projet/jobs" + token
 headers = {'Accept': 'application/json'}
 r1 = requests.get(urljob, headers=headers)
-print(r1.json())
+# print(r1.json())
 
 #GET job's executions
 urlexec = urlbase + "/project/mon-premier-projet/executions" + token
 headers = {'Accept': 'application/json'}
 r2 = requests.get(urlexec, headers=headers)
-print(r2.json())
+#print(type(r2.json()))
+d = r2.json()
+#print(d["executions"].status())
+for elements in d["executions"]:
+    print(elements["project"])
+    print(elements["description"])
+    print(elements["status"])
+    print(elements["executionType"])
+
 
 
 #GET job's info
