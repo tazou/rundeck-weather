@@ -4,6 +4,7 @@
 import requests
 import json
 
+#Make API request
 token = "?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
 urlbase = "http://localhost:4440/api/24"
 url = urlbase + "/projects" + token
@@ -11,32 +12,38 @@ headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 
 #print(type(r)) #<class 'requests.models.Response'>
-# print(r.json)
+print(r.json())
+print('---===---')
 
-# Boucle sur le nom de chaque projets.
-# for element in r.json():
-#     print(element["name"])
+#Loop on projects name.
+for element in r.json():
+    projet = element["name"]
+    #GET job's executions
+    urlexec = urlbase + "/project/" + projet + "/executions" + token
+    print(urlexec)
+    r2 = requests.get(urlexec, headers=headers)
+    print(type(r2.json()))
+    #print(r2.json()) #ici on à toutes les exécutions du job.
+    for cle in r2.json().keys():
+        print(cle)
+    print(r2.json()["executions"][0]["date-ended"])
+    print(r2.json()["executions"][0]["status"])
+    print("---fin test---")
+    d = r2.json()
+    #print(d["executions"].status())
+    print('---===---')
+    # for elements in d["executions"]:
+    #     print(elements["project"])
+    #     print(elements["description"])
+    #     print(elements["status"])
+    #     print(elements["executionType"])
+    #     print('---')
 
-#GET  project's jobs
-urljob = urlbase + "/project/mon-premier-projet/jobs" + token
-headers = {'Accept': 'application/json'}
-r1 = requests.get(urljob, headers=headers)
-# print(r1.json())
 
-#GET job's executions
-urlexec = urlbase + "/project/mon-premier-projet/executions" + token
-headers = {'Accept': 'application/json'}
-r2 = requests.get(urlexec, headers=headers)
-#print(type(r2.json()))
-d = r2.json()
-#print(d["executions"].status())
-for elements in d["executions"]:
-    print(elements["project"])
-    print(elements["description"])
-    print(elements["status"])
-    print(elements["executionType"])
-
-
+    #GET  project's jobs
+    #urljob = urlbase + "/project/" + projet + "/jobs" + token
+    #r1 = requests.get(urljob, headers=headers)
+    # print(r1.json())
 
 #GET job's info
 # jobid = "af266d96-8ba1-4286-b356-7e037fc5315c"
