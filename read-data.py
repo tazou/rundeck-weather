@@ -5,90 +5,49 @@ import requests
 import json
 
 #Make API request
-token = "?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu"
-urlbase = "http://localhost:4440/api/24"
+token = "?authtoken=9dX4CaNCJqkQNgsD2B3Z76ZxdmFaqKWl"
+urlbase = "http://rundeck.virtual-expo.com/api/24"
 url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 
-#print(type(r)) #<class 'requests.models.Response'>
-print(r.json())
-print('---===---')
-
 #Loop on projects name.
 for element in r.json():
     projet = element["name"]
-    #GET job's executions
-    urlexec = urlbase + "/project/" + projet + "/executions" + token
-    print(urlexec)
-    r2 = requests.get(urlexec, headers=headers)
-    print(type(r2.json()))
-    #print(r2.json()) #ici on à toutes les exécutions du job.
-    for cle in r2.json().keys():
-        print(cle)
-    print(r2.json()["executions"][0]["date-ended"])
-    print(r2.json()["executions"][0]["status"])
-    print("---fin test---")
-    d = r2.json()
-    #print(d["executions"].status())
-    print('---===---')
-    # for elements in d["executions"]:
-    #     print(elements["project"])
-    #     print(elements["description"])
-    #     print(elements["status"])
-    #     print(elements["executionType"])
-    #     print('---')
+    print("Projet -> " + projet)
 
+    #Get job list
+    urljoblist = urlbase + "/project/" + projet + "/jobs" + token
+    print(urljoblist)
+    r2 = requests.get(urljoblist, headers=headers)
+    l = r2.json() #r2.json() est une liste
+    #print(json.dumps(r2.json()))
 
-    #GET  project's jobs
-    #urljob = urlbase + "/project/" + projet + "/jobs" + token
-    #r1 = requests.get(urljob, headers=headers)
-    # print(r1.json())
+    #Boucle sur les job du projet
+    for element in l: #element est un dictionnaire
+        print(element["name"]) #j'ai bien le nom du job ici
+        urljobexecutions = urlbase + "/job/" + element["id"] + "/executions" + token
+        print(urljobexecutions)
+        r3 = requests.get(urljobexecutions, headers=headers) #r3 est un dictionnaire
+        d3 = r3.json() #d3 est un dictionnaire (clés : paging et executions)
+        #print(d3)
+        if d3["executions"] != "":
+            for valeurs in d3["executions"]: #ici valeurs est une liste
+                print(valeurs["status"])
+                if valeurs["status"] == "succeeded":
+                    print(valeurs["date-ended"]["date"])
+                    if valeurs["status"] == "succeeded":
+                        print(valeurs["successfulNodes"])
+                    else:
+                        print(valeurs["failedNodes"])
+            break #break pour ne pas boucler sur la liste car c'est uniquement le dernier run qui m'interesse et il s'affiche en premier.
 
-#GET job's info
-# jobid = "af266d96-8ba1-4286-b356-7e037fc5315c"
-# urljob1 = urlbase + "/job/" + jobid + token
-# print(urljob1)
-# headers = {'Accept': 'application/json'}
-# r2 = requests.get(urljob1, headers=headers)
-# print(r2.json())
-
-
-#status de l'exécution d'un projet :
-#http://localhost:4440/api/24/project/mon-premier-projet/executions?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu
-
-
-# print(type(r.json())) #r.json() renvoi une liste  <class 'list'> contenant un dico qui contient le json
-# print(r.json())
-# print(r.json()[0])
-# print(type(r.json()[0])) # ici c'est un dict
-# mon_dictionnaire = r.json()[0]
-# print(mon_dictionnaire)
-#
-# print(r.json()[0]["name"]) #ici nom du projet
-#
-# for element in r.json()[0].keys():
-#     print(r.json()[element]["name"])
-
-#j = json.load(r.json()[0])
-#print(j['name'])
-
-#j = json.load(r.json())
-#print(j['name'])
-
-# j = json.loads('{"one" : "1", "two" : "2", "three" : "3"}')
-# print(j)
-# print(j['two'])
-
-#http://docs.python-guide.org/en/latest/scenarios/json/
-
-#url = 'https://api.github.com/some/endpoint'
-#>>> headers = {'user-agent': 'my-app/0.0.1'}
-#>>> r = requests.get(url, headers=headers)
-
-#http://docs.python-requests.org/en/master/user/quickstart/
+        print("---job suivant-----")
+    print("sortie du for")
+    print("================projet suivant-----------")
 
 #mon container de dev
 #docker run -p 4440:4440 -e EXTERNAL_SERVER_URL=http://localhost:4440 --name rundeck -t jordan/rundeck:latest
-
 #curl -H "Accept:application/json" http://localhost:4440/api/2/projects?authtoken=4OxNnNOigtd8j729lki1Jj9FRoMLeQRu[{"url":"http://localhost:4440/api/24/project/mon-premier-projet","name":"mon-premier-projet","description":""}]
+
+#curl -H "Accept:application/json" http://rundeck.virtual-expo.com/api/24/project/backup-dblx-mysql/jobs?authtoken=9dX4CaNCJqkQNgsD2B3Z76ZxdmFaqKWl |python -m json.tool
