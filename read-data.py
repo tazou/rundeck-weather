@@ -11,6 +11,11 @@ url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 
+#Déclaration des dico
+d_projet = dict()
+d_job = dict()
+d_element = dict()
+
 #Loop on projects name.
 for element in r.json():
     projet = element["name"]
@@ -18,7 +23,7 @@ for element in r.json():
 
     #Get job list
     urljoblist = urlbase + "/project/" + projet + "/jobs" + token
-    print(urljoblist)
+    #print(urljoblist)
     r2 = requests.get(urljoblist, headers=headers)
     l = r2.json() #r2.json() est une liste
     #print(json.dumps(r2.json()))
@@ -26,25 +31,32 @@ for element in r.json():
     #Boucle sur les job du projet
     for element in l: #element est un dictionnaire
         print(element["name"]) #j'ai bien le nom du job ici
-        urljobexecutions = urlbase + "/job/" + element["id"] + "/executions" + token
-        print(urljobexecutions)
+        urljobexecutions = urlbase + "/job/" + element["id"] + "/executions" + token + "&max=1"
+        #print("url job execution -> " + urljobexecutions)
         r3 = requests.get(urljobexecutions, headers=headers) #r3 est un dictionnaire
         d3 = r3.json() #d3 est un dictionnaire (clés : paging et executions)
         #print(d3)
+        #print(urljobexecutions)
         if d3["executions"] != "":
-            for valeurs in d3["executions"]: #ici valeurs est une liste
+            for valeurs in d3["executions"]: #ici valeurs est un dictionnaire
                 print(valeurs["status"])
-                if valeurs["status"] == "succeeded":
-                    print(valeurs["date-ended"]["date"])
-                    if valeurs["status"] == "succeeded":
-                        print(valeurs["successfulNodes"])
-                    else:
-                        print(valeurs["failedNodes"])
-            break #break pour ne pas boucler sur la liste car c'est uniquement le dernier run qui m'interesse et il s'affiche en premier.
+                if "successfulNodes" in valeurs: print(f'Node(s) en succès -> {valeurs["successfulNodes"]}')
+                if "failedNodes" in valeurs: print(f'Node(s) en fail -> {valeurs["failedNodes"]}')
+                if "date-started" in valeurs: print(valeurs["date-started"]["date"])
+                if "date-ended" in valeurs: print(valeurs["date-ended"]["date"])
+                if "user" in valeurs: print(valeurs["user"])
+                final[element["name"]] = valeurs["date-started"]["date"]
+                print(final)
+                # if valeurs["successfulNodes"] : print(valeurs["successfulNodes"])
+                # if valeurs["date-ended"]["date"] : print(valeurs["date-ended"]["date"])
+                # if valeurs["status"] == "succeeded":
+                #     print(valeurs["date-ended"]["date"])
+                #     print(valeurs["successfulNodes"])
+                # else:
+                #     print(valeurs["failedNodes"])
 
-        print("---job suivant-----")
-    print("sortie du for")
-    print("================projet suivant-----------")
+        print("+++++++++++++++++")
+    print("*************************************")
 
 #mon container de dev
 #docker run -p 4440:4440 -e EXTERNAL_SERVER_URL=http://localhost:4440 --name rundeck -t jordan/rundeck:latest
