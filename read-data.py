@@ -5,18 +5,22 @@
 import requests
 import json
 
-#Requête de API pour les projets
+#Requête de l'API Rundeck pour les projets
 token = "?authtoken=UGpUyHm9MqS7swx7xewWMpoo6Zia9PaJ" #Il faudra externaliser le token et en générer un nouveau après le dev puis révoquer celui ci.
 urlbase = "http://rundeck.virtual-expo.com/api/24"
 url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
 print(url)
+
 #Déclaration des dico
 d_projet = dict()
 d_job = dict()
 d_element = dict()
 final = dict()
+f = dict()
+t2 = dict()
+listejobs = list()
 
 #Loop on projects name.
 for element in r.json():
@@ -32,7 +36,8 @@ for element in r.json():
 
     #Boucle sur les job du projet
     for element in l: #element est un dictionnaire
-        print(element["name"]) #j'ai bien le nom du job ici
+        job_name = element["name"]
+        print("nom du job -> " + job_name) #j'ai bien le nom du job ici
         urljobexecutions = urlbase + "/job/" + element["id"] + "/executions" + token + "&max=1"
         #print("url job execution -> " + urljobexecutions)
         r3 = requests.get(urljobexecutions, headers=headers) #r3 est un dictionnaire
@@ -41,25 +46,48 @@ for element in r.json():
         #print(urljobexecutions)
         if d3["executions"] != "":
             for valeurs in d3["executions"]: #ici "valeurs" est un dictionnaire
-                print(valeurs["status"])
+                #print(valeurs["status"])
                 #if "successfulNodes" in valeurs: print(f'Node(s) en succès -> {valeurs["successfulNodes"]}')
-                if "successfulNodes" in valeurs: print("Node(s) en succès -> {} ",valeurs["successfulNodes"])
-                # if "failedNodes" in valeurs: print(f'Node(s) en fail -> {valeurs["failedNodes"]}')
-                # if "date-started" in valeurs: print(valeurs["date-started"]["date"])
-                # if "date-ended" in valeurs: print(valeurs["date-ended"]["date"])
-                # if "user" in valeurs: print(valeurs["user"])
-                final[element["name"]] = valeurs["date-started"]["date"]
-                print(final)
-                # if valeurs["successfulNodes"] : print(valeurs["successfulNodes"])
-                # if valeurs["date-ended"]["date"] : print(valeurs["date-ended"]["date"])
-                # if valeurs["status"] == "succeeded":
-                #     print(valeurs["date-ended"]["date"])
-                #     print(valeurs["successfulNodes"])
-                # else:
-                #     print(valeurs["failedNodes"])
+                if "successfulNodes" in valeurs:
+                    #print("Node(s) en succès -> {} ".format(valeurs["successfulNodes"]))
+                    nodeSucces = valeurs["successfulNodes"]
+                else:
+                    nodeSucces = "Aucun"
+                if "failedNodes" in valeurs:
+                    #print("Node(s) en fail ->  {} ".format(valeurs["failedNodes"]))
+                    nodeFail = valeurs["failedNodes"]
+                else:
+                    nodeFail = "Aucun"
+                #if "date-started" in valeurs: print(valeurs["date-started"]["date"])
+                #if "date-ended" in valeurs: print(valeurs["date-ended"]["date"])
+                #if "user" in valeurs: print(valeurs["user"])
+                d_job[job_name] = {"status":valeurs["status"],
+                                            "nodeS":nodeSucces,
+                                            "nodeF":nodeFail,
+                                            "datedebut":valeurs["date-started"]["date"],
+                                            "datefin":valeurs["date-ended"]["date"]}
+                #listejobs.append(d_job)
+                #print("la liste -> {}".format(listejobs))
 
-        print("+++++++++++++++++")
-    print("*************************************")
+
+        print("++++++for jobs+++++++++++")
+
+    #Fin du for job
+    print("le dico d_job -> ")
+    for k,v in d_job.items():
+        print("Voici la clé -> {}".format(k))
+        print("Voici la valeur -> {}\n".format(v))
+
+    final[projet] = d_job
+    #final[projet] = d_job
+    print("\nle dico FINAL du projet -> {}".format(projet))
+    #print(final)
+    #del listejobs[:]
+
+    print("\n***********for projects**************************")
+    print(json.dumps(final))
+    d_job = {}
+
 
 #mon container de dev
 #docker run -p 4440:4440 -e EXTERNAL_SERVER_URL=http://localhost:4440 --name rundeck -t jordan/rundeck:latest
