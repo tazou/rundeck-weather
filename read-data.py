@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
 # coding: utf-8
+# Fait en python 3.6
 
 import requests
 import json
 
-#Make API request
-token = "?authtoken=9dX4CaNCJqkQNgsD2B3Z76ZxdmFaqKWl"
+#Requête de API pour les projets
+token = "?authtoken=UGpUyHm9MqS7swx7xewWMpoo6Zia9PaJ" #Il faudra externaliser le token et en générer un nouveau après le dev puis révoquer celui ci.
 urlbase = "http://rundeck.virtual-expo.com/api/24"
 url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
-
+print(url)
 #Déclaration des dico
 d_projet = dict()
 d_job = dict()
 d_element = dict()
+final = dict()
 
 #Loop on projects name.
 for element in r.json():
     projet = element["name"]
     print("Projet -> " + projet)
 
-    #Get job list
+    #Récupérer la liste des jobs
     urljoblist = urlbase + "/project/" + projet + "/jobs" + token
     #print(urljoblist)
     r2 = requests.get(urljoblist, headers=headers)
@@ -38,13 +40,14 @@ for element in r.json():
         #print(d3)
         #print(urljobexecutions)
         if d3["executions"] != "":
-            for valeurs in d3["executions"]: #ici valeurs est un dictionnaire
+            for valeurs in d3["executions"]: #ici "valeurs" est un dictionnaire
                 print(valeurs["status"])
-                if "successfulNodes" in valeurs: print(f'Node(s) en succès -> {valeurs["successfulNodes"]}')
-                if "failedNodes" in valeurs: print(f'Node(s) en fail -> {valeurs["failedNodes"]}')
-                if "date-started" in valeurs: print(valeurs["date-started"]["date"])
-                if "date-ended" in valeurs: print(valeurs["date-ended"]["date"])
-                if "user" in valeurs: print(valeurs["user"])
+                #if "successfulNodes" in valeurs: print(f'Node(s) en succès -> {valeurs["successfulNodes"]}')
+                if "successfulNodes" in valeurs: print("Node(s) en succès -> {} ",valeurs["successfulNodes"])
+                # if "failedNodes" in valeurs: print(f'Node(s) en fail -> {valeurs["failedNodes"]}')
+                # if "date-started" in valeurs: print(valeurs["date-started"]["date"])
+                # if "date-ended" in valeurs: print(valeurs["date-ended"]["date"])
+                # if "user" in valeurs: print(valeurs["user"])
                 final[element["name"]] = valeurs["date-started"]["date"]
                 print(final)
                 # if valeurs["successfulNodes"] : print(valeurs["successfulNodes"])
