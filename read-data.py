@@ -11,7 +11,7 @@ urlbase = "http://rundeck.virtual-expo.com/api/24"
 url = urlbase + "/projects" + token
 headers = {'Accept': 'application/json'}
 r = requests.get(url, headers=headers)
-print(url)
+#print(url)
 
 #Déclaration des dico
 d_projet = dict()
@@ -21,11 +21,12 @@ final = dict()
 f = dict()
 t2 = dict()
 listejobs = list()
+i = 0
 
 #Loop on projects name.
 for element in r.json():
     projet = element["name"]
-    print("Projet -> " + projet)
+    #print("Projet -> " + projet)
 
     #Récupérer la liste des jobs
     urljoblist = urlbase + "/project/" + projet + "/jobs" + token
@@ -37,7 +38,7 @@ for element in r.json():
     #Boucle sur les job du projet
     for element in l: #element est un dictionnaire
         job_name = element["name"]
-        print("nom du job -> " + job_name) #j'ai bien le nom du job ici
+        #print("nom du job -> " + job_name) #j'ai bien le nom du job ici
         urljobexecutions = urlbase + "/job/" + element["id"] + "/executions" + token + "&max=1"
         #print("url job execution -> " + urljobexecutions)
         r3 = requests.get(urljobexecutions, headers=headers) #r3 est un dictionnaire
@@ -70,23 +71,40 @@ for element in r.json():
                 #print("la liste -> {}".format(listejobs))
 
 
-        print("++++++for jobs+++++++++++")
+        #print("++++++for jobs+++++++++++")
 
     #Fin du for job
-    print("le dico d_job -> ")
-    for k,v in d_job.items():
-        print("Voici la clé -> {}".format(k))
-        print("Voici la valeur -> {}\n".format(v))
+    i += 1
+    #print("le dico d_job -> ")
+    # for k,v in d_job.items():
+    #     print("Voici la clé -> {}".format(k))
+    #     print("Voici la valeur -> {}\n".format(v))
 
     final[projet] = d_job
     #final[projet] = d_job
-    print("\nle dico FINAL du projet -> {}".format(projet))
+    #print("\nle dico FINAL du projet -> {}".format(projet))
     #print(final)
     #del listejobs[:]
 
-    print("\n***********for projects**************************")
-    print(json.dumps(final))
+    #print("\n***********for projects**************************")
+    #print(json.dumps(final))
     d_job = {}
+
+    if i == 2:
+        #print("le dico final dans le if")
+        #print(final)
+        break
+
+#Construction du html
+#print("---------html-----------")
+for p,j in final.items():
+    print("<h1>{}</h1>".format(p))
+    for k,job in j.items():
+        print("<b>{}</b>".format(k))
+        print("<ul>")
+        for t in job.items():
+            print("<li>{}</li>".format(t))
+        print("</ul>")
 
 
 #mon container de dev
