@@ -1,148 +1,53 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
-    .dot-green {
-        height: 30px;
-        width: 30px;
-        background-color: green;
-        border-radius: 50%;
-        display: inline-block;
-    }
-    .dot-red {
-        height: 30px;
-        width: 30px;
-        background-color: red;
-        border-radius: 50%;
-        display: inline-block;
-    }
-    .dot-gray {
-        height: 30px;
-        width: 30px;
-        background-color: gray;
-        border-radius: 50%;
-        display: inline-block;
-    }
-    .span12{
-border:solid 2px black;
-background-color:grey;
-}
-
-.espace {
-  margin:5px;
-}
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Rundeck Weather</title>
   </head>
   <body>
     <h1>Rundeck Weather</h1>
     <h5>Page générée le 28/08/2018 à 13:37</h5>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+    <!--début loop ligne html-->
     <div class="container">
       <div class="row">
+        <!--debut loop projet-->
         <div class="col-sm">
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th>Backpator</th>
+                <th>PROJET 1</th>
                 <th></th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
+              <!--début loop job-->
               <tr>
                 <th scope="row">manual_update</th>
                 <td class="bg-success">2018-08-12 06:55</td>
                 <td class="bg-success">Succès</td>
               </tr>
-              <tr>
-                <th scope="row">auto update</th>
-                <td class="bg-danger">2018-08-12 06:30</td>
-                <td class="bg-danger">Echec</td>
-
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-sm">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th>Astreintes</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">manual_update</th>
-                <td class="bg-success">2018-08-12 06:55</td>
-                <td class="bg-success">Succès</td>
-              </tr>
+              <!-- fin loop job-->
               <tr>
                 <th scope="row">auto update</th>
                 <td class="bg-danger">2018-08-12 06:30</td>
                 <td class="bg-danger">Echec</td>
               </tr>
-              <tr>
-                <th scope="row">manual_update</th>
-                <td class="bg-success">2018-08-12 06:55</td>
-                <td class="bg-success">Succès</td>
-              </tr>
-              <tr>
-                <th scope="row">auto update</th>
-                <td class="bg-success">2018-08-12 06:30</td>
-                <td class="bg-success">Echec</td>
-              </tr>
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
+        <!--fin loop projet-->
         <div class="col-sm">
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th>Backpator</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">manual_update</th>
-                <td class="bg-success">2018-08-12 06:55</td>
-                <td class="bg-success">Succès</td>
-              </tr>
-              <tr>
-                <th scope="row">auto update</th>
-                <td class="bg-danger">2018-08-12 06:30</td>
-                <td class="bg-danger">Echec</td>
-
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-sm">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th>Astreintes</th>
+                <th>PROJET 2</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -173,111 +78,7 @@ background-color:grey;
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm border border-dark espace  border border-dark espace">
-          <h1>astreintes-update</h1>
-          <b class="bg-success">manual_update</b>
-          <ul>
-          <li>('datedebut', '2018-08-07T06:32:32Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-07T06:32:43Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-          <b class="bg-success">update_from_cal</b>
-          <ul>
-          <li>('datedebut', '2018-08-27T06:10:00Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-27T06:10:12Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-        </div>
-        <div class="col-sm border border-dark espace border border-dark espace">
-          <h1>backup-dblx-mysql</h1>
-          <b class="bg-danger">rdblx_backup_manager</b>
-          <ul>
-          <li>('datedebut', '2018-04-26T08:04:36Z')</li>
-          <li>('nodeF', ['veso3rdblx01'])</li>
-          <li>('datefin', '2018-04-26T12:37:44Z')</li>
-          <li>('status', 'aborted')</li>
-          <li>('nodeS', 'Aucun')</li>
-          </ul>        </div>
-        <div class="col-sm border border-dark espace border border-dark espace">
-          <h1>backpator</h1>
-          <b>bck mysql</b>
-          <ul>
-          <li>('datedebut', '2018-08-07T06:32:32Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-07T06:32:43Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-          <b>bck nas</b>
-          <ul>
-          <li>('datedebut', '2018-08-27T06:10:00Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-27T06:10:12Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>          </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm border border-dark espace">
-          <h1>astreintes-update</h1>
-          <b>manual_update</b>
-          <ul>
-          <li>('datedebut', '2018-08-07T06:32:32Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-07T06:32:43Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-          <b>update_from_cal</b>
-          <ul>
-          <li>('datedebut', '2018-08-27T06:10:00Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-27T06:10:12Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-        </div>
-        <div class="col-sm border border-dark espace">
-          <h1>backup-dblx-mysql</h1>
-          <b>rdblx_backup_manager</b>
-          <ul>
-          <li>('datedebut', '2018-04-26T08:04:36Z')</li>
-          <li>('nodeF', ['veso3rdblx01'])</li>
-          <li>('datefin', '2018-04-26T12:37:44Z')</li>
-          <li>('status', 'aborted')</li>
-          <li>('nodeS', 'Aucun')</li>
-          </ul>        </div>
-        <div class="col-sm border border-dark espace">
-          <h1>backpator</h1>
-          <b>bck mysql</b>
-          <ul>
-          <li>('datedebut', '2018-08-07T06:32:32Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-07T06:32:43Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>
-          <b>bck nas</b>
-          <ul>
-          <li>('datedebut', '2018-08-27T06:10:00Z')</li>
-          <li>('nodeF', 'Aucun')</li>
-          <li>('datefin', '2018-08-27T06:10:12Z')</li>
-          <li>('status', 'succeeded')</li>
-          <li>('nodeS', ['veso4admlx07'])</li>
-          </ul>          </div>
-      </div>
-    </div>
-
-
+    <!--fin loop ligne html->
 
 </body>
 </html>
