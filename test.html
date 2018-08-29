@@ -9,7 +9,7 @@
   </head>
   <body>
     <h1>Rundeck Weather</h1>
-    <h5>Page générée le 28/08/2018 à 13:37</h5>
+    <h5>Page générée le 29/8/2018 à 9:48:53</h5>
     <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -17,139 +17,683 @@
 
     <div class="container">
       <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-rplx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
     
-        <!--debut loop projet-->
-        <div class="col-sm">
-        <table class="table">
-        <thead class="thead-dark">
-        <tr>
-        <th>astreintes-update</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        
-              <tr>
-            <th scope="row">update_from_cal</th>
-                <td class="bg-success">('datedebut', '2018-08-27T06:10:00Z')</td>
-                
-                <td class="bg-success">('status', 'succeeded')</td>
-                
-                <td class="bg-success">('datefin', '2018-08-27T06:10:12Z')</td>
-                
-                <td class="bg-success">('nodeS', ['veso4admlx07'])</td>
-                
-                <td class="bg-success">('nodeF', 'Aucun')</td>
-                </tr>
-              <tr>
-            <th scope="row">manual_update</th>
-                <td class="bg-success">('datedebut', '2018-08-07T06:32:32Z')</td>
-                
-                <td class="bg-success">('status', 'succeeded')</td>
-                
-                <td class="bg-success">('datefin', '2018-08-07T06:32:43Z')</td>
-                
-                <td class="bg-success">('nodeS', ['veso4admlx07'])</td>
-                
-                <td class="bg-success">('nodeF', 'Aucun')</td>
-                </tr>
-        <!--debut loop projet-->
-        <div class="col-sm">
-        <table class="table">
-        <thead class="thead-dark">
-        <tr>
-        <th>backup-dblx-mysql</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        
-              <tr>
-            <th scope="row">rdblx_backup_manager</th>
-                <td class="bg-success">('datedebut', '2018-04-26T08:04:36Z')</td>
-                
-                <td class="bg-success">('status', 'aborted')</td>
-                
-                <td class="bg-success">('datefin', '2018-04-26T12:37:44Z')</td>
-                
-                <td class="bg-success">('nodeS', 'Aucun')</td>
-                
-                <td class="bg-success">('nodeF', ['veso3rdblx01'])</td>
-                </tr>
+          <tr>
+        <th scope="row">reset-rplx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-rplx/execution/show/2464'>succeeded</a></td><td class='bg-success'>['velo1rplx03-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-23T06:41:07Z</td><td class='bg-success'>2018-05-23T06:41:21Z</td></tr>
     <div class="container">
       <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-bolx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
     
-        <!--debut loop projet-->
+          <tr>
+        <th scope="row">reset-bolx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-bolx/execution/show/4863'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2bolx01-2.virtual-expo.com', 'veso2bolx01-1.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T06:35:34Z</td><td class='bg-success'>2018-08-28T06:43:49Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>grantor-for-preprod</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">install_perms</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/grantor-for-preprod/execution/show/4136'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-07-25T14:14:05Z</td><td class='bg-success'>2018-07-25T14:14:09Z</td></tr>
+    <div class="container">
+      <div class="row">
         <div class="col-sm">
         <table class="table">
         <thead class="thead-dark">
         <tr>
         <th>astreintes-update</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
         </tr>
         </thead>
         <tbody>
-        
-              <tr>
-            <th scope="row">update_from_cal</th>
-                <td class="bg-success">('datedebut', '2018-08-27T06:10:00Z')</td>
-                
-                <td class="bg-success">('status', 'succeeded')</td>
-                
-                <td class="bg-success">('datefin', '2018-08-27T06:10:12Z')</td>
-                
-                <td class="bg-success">('nodeS', ['veso4admlx07'])</td>
-                
-                <td class="bg-success">('nodeF', 'Aucun')</td>
-                </tr>
-              <tr>
-            <th scope="row">manual_update</th>
-                <td class="bg-success">('datedebut', '2018-08-07T06:32:32Z')</td>
-                
-                <td class="bg-success">('status', 'succeeded')</td>
-                
-                <td class="bg-success">('datefin', '2018-08-07T06:32:43Z')</td>
-                
-                <td class="bg-success">('nodeS', ['veso4admlx07'])</td>
-                
-                <td class="bg-success">('nodeF', 'Aucun')</td>
-                </tr>
-        <!--debut loop projet-->
+    
+          <tr>
+        <th scope="row">update_from_cal</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/astreintes-update/execution/show/4833'>succeeded</a></td><td class='bg-success'>['veso4admlx07']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-27T06:10:00Z</td><td class='bg-success'>2018-08-27T06:10:12Z</td></tr>
+          <tr>
+        <th scope="row">manual_update</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/astreintes-update/execution/show/4355'>succeeded</a></td><td class='bg-success'>['veso4admlx07']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-07T06:32:32Z</td><td class='bg-success'>2018-08-07T06:32:43Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-dblx-dev</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">reset-dwhlx-preprod</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-dblx-dev/execution/show/4884'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2dwhlx01.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T23:00:00Z</td><td class='bg-success'>2018-08-28T23:35:01Z</td></tr>
+          <tr>
+        <th scope="row">reset-dblx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-dblx-dev/execution/show/4841'>succeeded</a></td><td class='bg-success'>['localhost', 'velo1dblx07-1.virtual-expo.com', 'velo1dblx07-2.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-27T09:47:35Z</td><td class='bg-success'>2018-08-27T13:16:32Z</td></tr>
+          <tr>
+        <th scope="row">reset-dwhlx-dev</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-dblx-dev/execution/show/4705'>succeeded</a></td><td class='bg-success'>['localhost', 'velo1dwhlx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-22T09:05:56Z</td><td class='bg-success'>2018-08-22T09:47:42Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-ssolx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">reset-ssolx-manager</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-ssolx/execution/show/3785'>failed</a></td><td class='bg-danger'>['velo1ssolx01']</td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>2018-07-10T07:19:29Z</td><td class='bg-danger'>2018-07-10T07:21:55Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>backup-infra</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">backup-data-daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/4847'>succeeded</a></td><td class='bg-success'>['veso4admlx04.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-27T18:00:00Z</td><td class='bg-success'>2018-08-28T18:11:11Z</td></tr>
+          <tr>
+        <th scope="row">switch-backup-archive</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/2360'>succeeded</a></td><td class='bg-success'>['veso4admlx05']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-17T15:49:14Z</td><td class='bg-success'>2018-05-17T15:49:18Z</td></tr>
+          <tr>
+        <th scope="row">switch-backup</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/4717'>succeeded</a></td><td class='bg-success'>['veso4sw13', 'veso4sw22', 'veso4sw21', 'veso4sw06', 'veso4sw05', 'veso4sw16', 'veso4sw04', 'veso4sw15', 'veso4sw03', 'veso4sw14']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-22T22:30:00Z</td><td class='bg-success'>2018-08-22T22:30:21Z</td></tr>
+          <tr>
+        <th scope="row">weekly_backup_archive</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/4777'>failed</a></td><td class='bg-danger'>['veso4admlx05']</td><td class='bg-danger'>['velo4nas11', 'velo4nas12']</td><td class='bg-danger'>2018-08-23T22:30:00Z</td><td class='bg-danger'>2018-08-23T22:43:24Z</td></tr>
+          <tr>
+        <th scope="row">backup-data-weeky</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/4809'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-08-25T18:00:00Z</td><td class='bg-danger'>2018-08-25T18:00:00Z</td></tr>
+          <tr>
+        <th scope="row">backup-data</th><td class='bg-secondary'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-infra/execution/show/4112'>aborted</a></td><td class='bg-secondary'>Aucun</td><td class='bg-secondary'>['veso4admlx04']</td><td class='bg-secondary'>2018-07-24T12:07:04Z</td><td class='bg-secondary'>2018-07-24T12:08:13Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>resetator</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">resetator-scheduler-dev01</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator/execution/show/3863'>failed</a></td><td class='bg-danger'>['velo1dblx01-1', 'velo1nodblx01-1', 'velo1folx01-1', 'velo1rplx01-1', 'velo1ssolx01-1', 'velo1wklx01-1']</td><td class='bg-danger'>['localhost', 'velo1solx01-1']</td><td class='bg-danger'>2018-07-15T06:00:00Z</td><td class='bg-danger'>2018-07-15T07:34:38Z</td></tr>
+          <tr>
+        <th scope="row">resetator_manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator/execution/show/4697'>succeeded</a></td><td class='bg-success'>['localhost', 'velo1solx03-1', 'velo1rplx03-1', 'velo1bolx03-1', 'velo1nodblx03-1', 'velo1folx03-1', 'velo1dblx03-1', 'velo1wklx03-1', 'velo1ssolx03-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-22T17:29:39Z</td><td class='bg-success'>2018-08-22T19:36:47Z</td></tr>
+          <tr>
+        <th scope="row">resetator_step2</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator/execution/show/4565'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>2018-08-16T06:12:38Z</td><td class='bg-danger'>2018-08-16T06:12:50Z</td></tr>
+          <tr>
+        <th scope="row">resetator_step3</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator/execution/show/4359'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['velo1solx04-1', 'localhost']</td><td class='bg-danger'>2018-08-07T14:02:14Z</td><td class='bg-danger'>2018-08-07T14:09:46Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-nodblx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">lvm-arbiter</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/2783'>succeeded</a></td><td class='bg-success'>['veso2nodblx01-1', 'veso2nodblx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-01T09:00:50Z</td><td class='bg-success'>2018-06-01T09:00:57Z</td></tr>
+          <tr>
+        <th scope="row">lvm-rs-sec</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/2779'>succeeded</a></td><td class='bg-success'>['veso2nodblx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-01T08:51:16Z</td><td class='bg-success'>2018-06-01T08:51:27Z</td></tr>
+          <tr>
+        <th scope="row">lvm-primary</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/2723'>succeeded</a></td><td class='bg-success'>['veso2nodblx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-31T08:23:39Z</td><td class='bg-success'>2018-05-31T08:45:59Z</td></tr>
+          <tr>
+        <th scope="row">mongo-reset-lvm</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/4516'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2nodblx01-1', 'veso2nodblx01-2', 'veso2nodblx01-3']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-14T07:48:52Z</td><td class='bg-success'>2018-08-14T07:50:09Z</td></tr>
+          <tr>
+        <th scope="row">lvm-secondaries</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/2730'>succeeded</a></td><td class='bg-success'>['veso2nodblx01-2', 'veso2nodblx01-3']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-31T10:24:58Z</td><td class='bg-success'>2018-05-31T10:56:44Z</td></tr>
+          <tr>
+        <th scope="row">clean_stop</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-nodblx/execution/show/2788'>succeeded</a></td><td class='bg-success'>['velo1nodblx01']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-01T10:03:27Z</td><td class='bg-success'>2018-06-01T10:03:39Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-mysql-dev07</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">setup-replication</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-dev07/execution/show/4891'>succeeded</a></td><td class='bg-success'>['velo1dblx07-1.virtual-expo.com', 'velo1dblx07-2.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-29T07:29:58Z</td><td class='bg-success'>2018-08-29T07:30:02Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>cleanator</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">alter-files</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/cleanator/execution/show/4530'>succeeded</a></td><td class='bg-success'>['velo6rplx01-1', 'velo1rplx01-1', 'velo1rplx02-1', 'velo6rplx05-1', 'velo6rplx04-1', 'velo6rplx03-1', 'velo6rplx02-1', 'velo1rplx07-1', 'veso3rplx04', 'veso3rplx03', 'velo1rplx03-1', 'velo1rplx01', 'velo1rplx05-1', 'velo1rplx06-1', 'veso2rplx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-14T09:31:51Z</td><td class='bg-success'>2018-08-14T09:32:19Z</td></tr>
+          <tr>
+        <th scope="row">remove-mount-points</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/cleanator/execution/show/3805'>failed</a></td><td class='bg-danger'>['veso3dwhlx03', 'veso3dwhlx02']</td><td class='bg-danger'>['veso3dwhlx01']</td><td class='bg-danger'>2018-07-11T14:01:51Z</td><td class='bg-danger'>2018-07-11T14:01:54Z</td></tr>
+          <tr>
+        <th scope="row">delete-files</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/cleanator/execution/show/4708'>succeeded</a></td><td class='bg-success'>['velo6solx05-1', 'velo6solx04-1', 'velo6solx05-2', 'velo6solx01-1', 'velo6solx03-1', 'velo6solx02-1', 'velo1solx01', 'velo1solx07-1', 'velo1solx05-2', 'velo1solx06-1', 'velo1solx05-1', 'velo1solx04-1', 'veso2solx01-2', 'velo1solx03-1', 'veso2solx01-1', 'velo1solx02-1', 'velo1solx01-1', 'veso3solx08', 'veso3solx07']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-22T13:12:52Z</td><td class='bg-success'>2018-08-22T13:12:57Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>backup-nodblx-mongodb</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">backup-lvm-manager-weekly</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-nodblx-mongodb/execution/show/4810'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-08-25T19:40:00Z</td><td class='bg-danger'>2018-08-25T19:40:00Z</td></tr>
+          <tr>
+        <th scope="row">backup-lvm-manager-daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-nodblx-mongodb/execution/show/4879'>succeeded</a></td><td class='bg-success'>['veso3nodblx03.virtual-expo.com', 'veso3nodblx02.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T19:40:00Z</td><td class='bg-success'>2018-08-28T20:06:34Z</td></tr>
+          <tr>
+        <th scope="row">backup-mongodb-lvm</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-nodblx-mongodb/execution/show/2846'>succeeded</a></td><td class='bg-success'>['veso3nodblx03', 'veso3nodblx02']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-04T09:51:31Z</td><td class='bg-success'>2018-06-04T10:17:15Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-mysql-preprod</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">manager_dmt</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-preprod/execution/show/1255'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2nodblx01-2', 'veso2nodblx01-3']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-03-02T08:28:46Z</td><td class='bg-success'>2018-03-02T08:44:16Z</td></tr>
+          <tr>
+        <th scope="row">setup-replication</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-preprod/execution/show/1142'>succeeded</a></td><td class='bg-success'>['veso2dblx01-1', 'veso2dblx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-02-27T13:35:10Z</td><td class='bg-success'>2018-02-27T13:35:15Z</td></tr>
+          <tr>
+        <th scope="row">manager_tech</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-preprod/execution/show/1212'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2nodblx01-2', 'veso2nodblx01-3']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-02-28T15:12:12Z</td><td class='bg-success'>2018-02-28T15:43:30Z</td></tr>
+          <tr>
+        <th scope="row">xtrarestore</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-preprod/execution/show/1019'>succeeded</a></td><td class='bg-success'>['veso2dblx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-02-23T07:41:59Z</td><td class='bg-success'>2018-02-23T09:20:43Z</td></tr>
+          <tr>
+        <th scope="row">manager_site</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-mysql-preprod/execution/show/3345'>failed</a></td><td class='bg-danger'>['veso2dblx01-2']</td><td class='bg-danger'>['veso2dblx01-1', 'localhost']</td><td class='bg-danger'>2018-06-21T06:28:04Z</td><td class='bg-danger'>2018-06-21T06:29:39Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>jobs_library</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">xtrarestore</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/1734'>succeeded</a></td><td class='bg-success'>['velo1ssolx01']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-04-10T13:13:22Z</td><td class='bg-success'>2018-04-10T13:13:36Z</td></tr>
+          <tr>
+        <th scope="row">install_perms</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/4128'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-07-25T09:08:40Z</td><td class='bg-success'>2018-07-25T09:08:42Z</td></tr>
+          <tr>
+        <th scope="row">tomcat-stop</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/4642'>succeeded</a></td><td class='bg-success'>['veso2folx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-20T08:14:44Z</td><td class='bg-success'>2018-08-20T08:15:05Z</td></tr>
+          <tr>
+        <th scope="row">tomcat-delete</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/1765'>succeeded</a></td><td class='bg-success'>['velo1ssolx01']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-04-12T08:23:52Z</td><td class='bg-success'>2018-04-12T08:23:54Z</td></tr>
+          <tr>
+        <th scope="row">vemon-submit</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/1421'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-03-12T09:57:55Z</td><td class='bg-success'>2018-03-12T09:57:57Z</td></tr>
+          <tr>
+        <th scope="row">stop mysql</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/1209'>succeeded</a></td><td class='bg-success'>['veso2nodblx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-02-28T14:57:29Z</td><td class='bg-success'>2018-02-28T14:57:42Z</td></tr>
+          <tr>
+        <th scope="row">puppet</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/2234'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['veso2bolx01-1']</td><td class='bg-danger'>2018-05-07T06:27:00Z</td><td class='bg-danger'>2018-05-07T06:29:35Z</td></tr>
+          <tr>
+        <th scope="row">xtrabackup</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/4834'>succeeded</a></td><td class='bg-success'>['veso3nodblx03.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-27T06:58:42Z</td><td class='bg-success'>2018-08-27T07:08:58Z</td></tr>
+          <tr>
+        <th scope="row">tomcat-start</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/3227'>succeeded</a></td><td class='bg-success'>['veso2folx01-1', 'veso2folx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-18T06:39:03Z</td><td class='bg-success'>2018-06-18T06:39:09Z</td></tr>
+          <tr>
+        <th scope="row">test_grantor</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/jobs_library/execution/show/3950'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-07-18T10:23:44Z</td><td class='bg-success'>2018-07-18T10:23:48Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>mysql-plots</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">csv_export</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/mysql-plots/execution/show/2713'>succeeded</a></td><td class='bg-success'>['veso3rdblx01']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-31T07:33:52Z</td><td class='bg-success'>2018-05-31T07:33:54Z</td></tr>
+          <tr>
+        <th scope="row">plot</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/mysql-plots/execution/show/4831'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-08-27T04:30:00Z</td><td class='bg-danger'>2018-08-27T04:30:00Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-dblx-pivot</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">reset manager</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-dblx-pivot/execution/show/2956'>failed</a></td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>['velo1dblx04-1']</td><td class='bg-danger'>2018-06-08T08:38:17Z</td><td class='bg-danger'>2018-06-08T13:03:01Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-solx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">9-add-replicas</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/4788'>succeeded</a></td><td class='bg-success'>['veso2solx01-2']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-24T06:24:03Z</td><td class='bg-success'>2018-08-24T06:27:24Z</td></tr>
+          <tr>
+        <th scope="row">7-clean-indexes</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/4727'>succeeded</a></td><td class='bg-success'>['veso2solx01-2', 'veso2solx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-23T09:08:22Z</td><td class='bg-success'>2018-08-23T09:08:28Z</td></tr>
+          <tr>
+        <th scope="row">3-puppet</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/1677'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-04-04T12:39:57Z</td><td class='bg-danger'>2018-04-04T12:39:57Z</td></tr>
+          <tr>
+        <th scope="row">8-restore-indexes</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/4589'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['veso2solx01-1']</td><td class='bg-danger'>2018-08-17T07:14:21Z</td><td class='bg-danger'>2018-08-17T07:14:25Z</td></tr>
+          <tr>
+        <th scope="row">1-stop-solr</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/4728'>succeeded</a></td><td class='bg-success'>['veso2solx01-2', 'veso2solx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-23T09:27:17Z</td><td class='bg-success'>2018-08-23T09:28:01Z</td></tr>
+          <tr>
+        <th scope="row">reset-solx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-solx/execution/show/4869'>succeeded</a></td><td class='bg-success'>['localhost', 'velo1solx04-1.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T12:26:16Z</td><td class='bg-success'>2018-08-28T12:47:22Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-wklx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">reset-wklx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-wklx/execution/show/4866'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2wklx01-1.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T06:54:08Z</td><td class='bg-success'>2018-08-28T07:00:21Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>reset-folx</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">dirs and services</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-folx/execution/show/2664'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-05-30T12:20:30Z</td><td class='bg-danger'>2018-05-30T12:20:30Z</td></tr>
+          <tr>
+        <th scope="row">reset-folx-manager</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/reset-folx/execution/show/4860'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2folx01-1.virtual-expo.com', 'veso2folx01-2.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T05:35:15Z</td><td class='bg-success'>2018-08-28T05:42:50Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>deployator</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">mep_db</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/deployator/execution/show/3100'>succeeded</a></td><td class='bg-success'>['velo4admlx02']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-12T14:30:02Z</td><td class='bg-success'>2018-06-12T14:30:05Z</td></tr>
+          <tr>
+        <th scope="row">batch_finder</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/deployator/execution/show/4887'>succeeded</a></td><td class='bg-success'>['velo4admlx02.virtual-expo.com', 'veso3wklx07.virtual-expo.com', 'veso3wklx04.virtual-expo.com', 'veso3wklx05.virtual-expo.com', 'veso3wklx06.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-29T01:00:00Z</td><td class='bg-success'>2018-08-29T01:00:18Z</td></tr>
+          <tr>
+        <th scope="row">deployment_conf</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/deployator/execution/show/4397'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-08T14:59:00Z</td><td class='bg-success'>2018-08-08T14:59:01Z</td></tr>
+          <tr>
+        <th scope="row">deploy</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/deployator/execution/show/4406'>succeeded</a></td><td class='bg-success'>['velo1folx01', 'velo1wklx01']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-08T16:00:19Z</td><td class='bg-success'>2018-08-08T16:00:20Z</td></tr>
+          <tr>
+        <th scope="row">app_finder</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/deployator/execution/show/4886'>succeeded</a></td><td class='bg-success'>['veso3folx12.virtual-expo.com', 'veso3solx08.virtual-expo.com', 'veso3solx07.virtual-expo.com', 'velo4admlx02.virtual-expo.com', 'veso3bolx03.virtual-expo.com', 'veso3bolx04.virtual-expo.com', 'veso3folx10.virtual-expo.com', 'veso3folx11.virtual-expo.com', 'veso3ssolx01.virtual-expo.com', 'veso3folx13.virtual-expo.com', 'veso3ssolx02.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-29T00:00:00Z</td><td class='bg-success'>2018-08-29T00:01:36Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>backupator</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">ssolx_weekly</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4813'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>2018-08-25T21:40:00Z</td><td class='bg-danger'>2018-08-25T21:40:00Z</td></tr>
+          <tr>
+        <th scope="row">dwhlx_daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4880'>succeeded</a></td><td class='bg-success'>['localhost', 'veso3dwhlx03.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T20:30:00Z</td><td class='bg-success'>2018-08-28T23:01:20Z</td></tr>
+          <tr>
+        <th scope="row">dwhlx_weekly</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4811'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>2018-08-25T20:30:00Z</td><td class='bg-danger'>2018-08-25T20:30:00Z</td></tr>
+          <tr>
+        <th scope="row">wplx_daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4881'>succeeded</a></td><td class='bg-success'>['velo4admlx02.virtual-expo.com', 'vext3wplx03.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T20:30:00Z</td><td class='bg-success'>2018-08-28T20:34:23Z</td></tr>
+          <tr>
+        <th scope="row">backupator_weekly</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4796'>failed</a></td><td class='bg-danger'>['veso3rdblx01.virtual-expo.com']</td><td class='bg-danger'>['localhost']</td><td class='bg-danger'>2018-08-24T15:30:00Z</td><td class='bg-danger'>2018-08-24T21:15:12Z</td></tr>
+          <tr>
+        <th scope="row">ssolx_daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4883'>succeeded</a></td><td class='bg-success'>['localhost', 'veso3ssolx01.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T21:40:00Z</td><td class='bg-success'>2018-08-28T21:40:13Z</td></tr>
+          <tr>
+        <th scope="row">wplx_weekly</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4812'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-08-25T20:30:00Z</td><td class='bg-danger'>2018-08-25T20:30:00Z</td></tr>
+          <tr>
+        <th scope="row">ve-apps-daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4889'>succeeded</a></td><td class='bg-success'>['veso3folx11.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-29T03:30:00Z</td><td class='bg-success'>2018-08-29T03:30:05Z</td></tr>
+          <tr>
+        <th scope="row">wp_sites_backup</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/3316'>succeeded</a></td><td class='bg-success'>['vext3wplx03']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-06-20T10:04:46Z</td><td class='bg-success'>2018-06-20T10:04:50Z</td></tr>
+          <tr>
+        <th scope="row">backupator_daily</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backupator/execution/show/4878'>succeeded</a></td><td class='bg-success'>['localhost', 'veso3nodblx03.virtual-expo.com', 'veso3rdblx01.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T15:30:00Z</td><td class='bg-success'>2018-08-28T16:33:43Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>grantor</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">install_perms</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/grantor/execution/show/4868'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T10:24:51Z</td><td class='bg-success'>2018-08-28T10:25:24Z</td></tr>
+          <tr>
+        <th scope="row">install_perms_prod2dev</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/grantor/execution/show/4865'>succeeded</a></td><td class='bg-success'>['localhost']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T06:49:30Z</td><td class='bg-success'>2018-08-28T06:50:46Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>resetator-preprod</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">resetator_manager</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator-preprod/execution/show/4888'>failed</a></td><td class='bg-danger'>['veso2ssolx01-1.virtual-expo.com', 'veso2nodblx01-3.virtual-expo.com', 'veso2bolx01-2.virtual-expo.com', 'veso2solx01-2.virtual-expo.com', 'veso2nodblx01-1.virtual-expo.com', 'veso2dblx01-2.virtual-expo.com', 'veso2wklx01-1.virtual-expo.com', 'veso2bolx01-1.virtual-expo.com', 'veso2solx01-1.virtual-expo.com', 'veso2nodblx01-2.virtual-expo.com', 'veso2dblx01-1.virtual-expo.com', 'veso2folx01-2.virtual-expo.com', 'veso2zoolx01-1.virtual-expo.com', 'veso2rplx01-1.virtual-expo.com']</td><td class='bg-danger'>['localhost', 'veso2folx01-1.virtual-expo.com']</td><td class='bg-danger'>2018-08-29T01:30:00Z</td><td class='bg-danger'>2018-08-29T04:58:38Z</td></tr>
+          <tr>
+        <th scope="row">resetator_step2</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator-preprod/execution/show/2553'>succeeded</a></td><td class='bg-success'>['localhost', 'veso2folx01-1', 'veso2folx01-2', 'veso2ssolx01-1', 'veso2wklx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-25T08:42:46Z</td><td class='bg-success'>2018-05-25T08:49:39Z</td></tr>
+          <tr>
+        <th scope="row">resetator_step3</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/resetator-preprod/execution/show/2766'>failed</a></td><td class='bg-danger'>['localhost', 'veso2solx01-2', 'veso2bolx01-1', 'veso2bolx01-2', 'veso2zoolx01-1']</td><td class='bg-danger'>['veso2solx01-1']</td><td class='bg-danger'>2018-06-01T06:07:26Z</td><td class='bg-danger'>2018-06-01T06:17:21Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>ogone-test-callback</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">callback-redir</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/ogone-test-callback/execution/show/2552'>succeeded</a></td><td class='bg-success'>['velo4admlx02', 'velo6folx01-1']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-05-25T07:52:25Z</td><td class='bg-success'>2018-05-25T07:52:35Z</td></tr>
+          <tr>
+        <th scope="row">delete-ogone-cont</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/ogone-test-callback/execution/show/4882'>succeeded</a></td><td class='bg-success'>['velo4admlx02.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-28T21:00:00Z</td><td class='bg-success'>2018-08-28T21:00:02Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>sqlref</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">mkref</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/sqlref/execution/show/4832'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>Aucun</td><td class='bg-danger'>2018-08-27T06:00:00Z</td><td class='bg-danger'>2018-08-27T06:00:00Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>wordpress</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">push-git-to-<env></th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/wordpress/execution/show/4787'>succeeded</a></td><td class='bg-success'>['localhost', 'vext3wplx03']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-24T06:14:11Z</td><td class='bg-success'>2018-08-24T06:14:31Z</td></tr>
+          <tr>
+        <th scope="row">restore-prod-to-dev</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/wordpress/execution/show/4640'>succeeded</a></td><td class='bg-success'>['velo1wplx02']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-20T07:27:22Z</td><td class='bg-success'>2018-08-20T07:28:27Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>backup-gitlab</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">backup_gitlab</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-gitlab/execution/show/4885'>succeeded</a></td><td class='bg-success'>['veso1applx04.virtual-expo.com']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-29T00:00:00Z</td><td class='bg-success'>2018-08-29T00:16:28Z</td></tr>
+    <div class="container">
+      <div class="row">
         <div class="col-sm">
         <table class="table">
         <thead class="thead-dark">
         <tr>
         <th>backup-dblx-mysql</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
         </tr>
         </thead>
         <tbody>
-        
-              <tr>
-            <th scope="row">rdblx_backup_manager</th>
-                <td class="bg-success">('datedebut', '2018-04-26T08:04:36Z')</td>
-                
-                <td class="bg-success">('status', 'aborted')</td>
-                
-                <td class="bg-success">('datefin', '2018-04-26T12:37:44Z')</td>
-                
-                <td class="bg-success">('nodeS', 'Aucun')</td>
-                
-                <td class="bg-success">('nodeF', ['veso3rdblx01'])</td>
-                </tr>
+    
+          <tr>
+        <th scope="row">rdblx_backup_manager</th><td class='bg-secondary'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/backup-dblx-mysql/execution/show/2118'>aborted</a></td><td class='bg-secondary'>Aucun</td><td class='bg-secondary'>['veso3rdblx01']</td><td class='bg-secondary'>2018-04-26T08:04:36Z</td><td class='bg-secondary'>2018-04-26T12:37:44Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>perfator</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">perfator</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/perfator/execution/show/1766'>failed</a></td><td class='bg-danger'>['veso2ssolx01-1', 'veso2bilx01', 'veso2zoolx01-1', 'veso2solx01-2', 'veso2solx01-1', 'veso2bolx01-1', 'veso2dblx01-1', 'veso2folx01-1', 'veso2vnlx01', 'veso2dblx01-2', 'veso2dwhlx01', 'veso2bolx01-2', 'veso2folx01-2', 'veso2nodblx01-1', 'veso2nodblx01-2', 'veso2nodblx01-3', 'veso2rplx01-1', 'veso2wklx01-1']</td><td class='bg-danger'>['veso2mtalx01']</td><td class='bg-danger'>2018-04-12T08:26:19Z</td><td class='bg-danger'>2018-04-12T08:41:24Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>schemata</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">Schemata</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/schemata/execution/show/4447'>succeeded</a></td><td class='bg-success'>['velo4admlx02']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-08-10T07:52:52Z</td><td class='bg-success'>2018-08-10T11:32:54Z</td></tr>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+        <th>bcmd</th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        </tr>
+        </thead>
+        <tbody>
+    
+          <tr>
+        <th scope="row">bcmd-script-parallel</th><td class='bg-success'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/bcmd/execution/show/74'>succeeded</a></td><td class='bg-success'>['veso2vnlx01', 'veso2vnlx02']</td><td class='bg-success'>Aucun</td><td class='bg-success'>2018-01-09T07:42:03Z</td><td class='bg-success'>2018-01-09T07:42:07Z</td></tr>
+          <tr>
+        <th scope="row">bcmd-script</th><td class='bg-danger'><a target='_blank' class='text-light' href='http://rundeck.virtual-expo.com:4440/project/bcmd/execution/show/77'>failed</a></td><td class='bg-danger'>Aucun</td><td class='bg-danger'>['velo5nslx01', 'velo5nslx02']</td><td class='bg-danger'>2018-01-09T11:28:43Z</td><td class='bg-danger'>2018-01-09T11:33:04Z</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+<hr>Virtual-Expo - <i>Rundeck Weather version 0.1</i>

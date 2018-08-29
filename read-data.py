@@ -4,6 +4,7 @@
 
 import requests
 import json
+import datetime
 
 #Requête de l'API Rundeck pour les projets
 token = "?authtoken=UGpUyHm9MqS7swx7xewWMpoo6Zia9PaJ" #Il faudra externaliser le token et en générer un nouveau après le dev puis révoquer celui ci.
@@ -22,6 +23,9 @@ f = dict()
 t2 = dict()
 listejobs = list()
 i = 0
+final_html = ""
+css = ""
+
 
 #Loop on projects name.
 for element in r.json():
@@ -43,7 +47,6 @@ for element in r.json():
         #print("url job execution -> " + urljobexecutions)
         r3 = requests.get(urljobexecutions, headers=headers) #r3 est un dictionnaire
         d3 = r3.json() #d3 est un dictionnaire (clés : paging et executions)
-        #print(d3)
         #print(urljobexecutions)
         if d3["executions"] != "":
             for valeurs in d3["executions"]: #ici "valeurs" est un dictionnaire
@@ -66,45 +69,19 @@ for element in r.json():
                                             "nodeS":nodeSucces,
                                             "nodeF":nodeFail,
                                             "datedebut":valeurs["date-started"]["date"],
-                                            "datefin":valeurs["date-ended"]["date"]}
-                #listejobs.append(d_job)
-                #print("la liste -> {}".format(listejobs))
-
-
-        #print("++++++for jobs+++++++++++")
+                                            "datefin":valeurs["date-ended"]["date"],
+                                            "url":valeurs["permalink"]}
 
     #Fin du for job
     i += 1
-    #print("le dico d_job -> ")
-    # for k,v in d_job.items():
-    #     print("Voici la clé -> {}".format(k))
-    #     print("Voici la valeur -> {}\n".format(v))
-
     final[projet] = d_job
-    #final[projet] = d_job
-    #print("\nle dico FINAL du projet -> {}".format(projet))
-    #print(final)
-    #del listejobs[:]
-
-    #print("\n***********for projects**************************")
-    #print(json.dumps(final))
     d_job = {}
+    # if i == 2:
+    #     break
 
-    if i == 2:
-        #print("le dico final dans le if")
-        #print(final)
-        break
-
-#Construction du html
-#print("---------html-----------")
-# for p,j in final.items():
-#     print("<h1>{}</h1>".format(p))
-#     for k,job in j.items():
-#         print("<b>{}</b>".format(k))
-#         print("<ul>")
-#         for t in job.items():
-#             print("<li>{}</li>".format(t))
-#         print("</ul>")
+#Calcul de la date actuelle
+now = datetime.datetime.now()
+ladate = "{}/{}/{} à {}:{}:{}".format(now.day,now.month,now.year,now.hour,now.minute,now.second)
 
 debut_html = """
 <!doctype html>
@@ -117,55 +94,70 @@ debut_html = """
   </head>
   <body>
     <h1>Rundeck Weather</h1>
-    <h5>Page générée le 28/08/2018 à 13:37</h5>
+    <h5>Page générée le {}</h5>
     <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="js/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-"""
+""".format(ladate)
 
 #Boucle sur le nombre de projets
-for ligne_html in final.items():
+for p,j in final.items():
     debut_html += """
     <div class="container">
       <div class="row">
-    """
-    for p,j in final.items():
-        debut_html += """
-        <!--debut loop projet-->
         <div class="col-sm">
         <table class="table">
         <thead class="thead-dark">
         <tr>
         <th>{}</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Status</th>
+        <th>Node succès</th>
+        <th>Node Fail</th>
+        <th>Date début</th>
+        <th>Date fin</th>
         </tr>
         </thead>
         <tbody>
-        """.format(p)
-        for k,job in j.items():
-            debut_html += """
-              <tr>
-            <th scope="row">{}</th>""".format(k)
-            for t in job.items():
-                debut_html += """
-                <td class="bg-success">{}</td>
-                """.format(t)
-            debut_html += "</tr>"
+    """.format(p)
+    for k,job in j.items():
+        if job["status"] == "succeeded":
+            css = "bg-success"
+        if job["status"] == "failed":
+            css = "bg-danger"
+        if job["status"] == "aborted":
+            css = "bg-secondary"
 
+        debut_html += """
+          <tr>
+        <th scope="row">{}</th>""".format(k)
+        debut_html += "<td class='{}'><a target='_blank' class='text-light' href='{}'>{}</a></td>".format(css,job["url"],job["status"])
+        debut_html += "<td class='{}'>{}</td>".format(css,job["nodeS"])
+        debut_html += "<td class='{}'>{}</td>".format(css,job["nodeF"])
+        debut_html += "<td class='{}'>{}</td>".format(css,job["datedebut"])
+        debut_html += "<td class='{}'>{}</td>".format(css,job["datefin"])
 
+        # for kjob,t in job.items():
+        #     debut_html += """
+        #     <td class="bg-success">{}</td>
+        #     """.format(job["status"])
+        debut_html += "</tr>"
+
+final_html += debut_html
+debut_html = ""
+
+final_html += """
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+"""
+
+final_html += "<hr>Virtual-Expo - <i>Rundeck Weather version 0.1</i>"
 path = 'test.html'
 file = open(path,'w')
-
-title = '<h1>Rundeck</h1>'
-body = "<p>Bonjour tout le monde"
-msg = title + body
-
-file.write(debut_html)
+file.write(final_html)
 file.close()
 
 #mon container de dev
